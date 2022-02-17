@@ -5,4 +5,4 @@
 | 演算法 | 連結 | OJ    | CODE |
 | -------- | ---- | --- | -------- |
 |      |  |     |     |
-|拓樸排序 |[link](https://neoj.sprout.tw/problem/165/) |NEOJ |[C](圖論_TopologicalSort.cpp)|
+|拓樸排序 |[link](https://neoj.sprout.tw/problem/165/) |NEOJ |[圖論_TopologicalSort.cpp](圖論_TopologicalSort.cpp)|
