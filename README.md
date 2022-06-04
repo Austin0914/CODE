@@ -15,4 +15,4 @@
 | 模擬     |[link](https://zerojudge.tw/ShowProblem?problemid=f313)  | Zerojudge    | [2020_10_pB](CODES/2020_10_pB.cpp)    |
 
 ## 復健
-[AP325](CODES/AP325/ap325)
+[AP325](Competitive-Programming-Learning/AP325/ap325/)
