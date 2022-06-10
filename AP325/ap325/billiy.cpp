@@ -1,28 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
 
-#define MAXN 1000001
-#define MOD 1000000007
+int main(){
 
-int DP[MAXN], n;
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
-int compute (int left) {
-    if (DP[left] != 0) {
-        return DP[left];
-    }
-    for (int i = 1; i <= 6; i++) {
-        if (left - i >= 0) {
-            DP[left] += compute(left - i);
-            DP[left] %= MOD;
+    int m, n;
+    cin >> m >> n;
+
+    map<int, int> c;
+    int all = (1 << m) - 1;
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        string str;
+        cin >> str;
+
+        int t = 0;
+        for(int j = 0; j < str.size(); j++){
+            t |= (1 << (str[j] - 'A'));
         }
+        
+        ans += c[t ^ all];
+        c[t]++;
     }
-    return DP[left];
-}
+    cout << ans << "\n";
 
-int main() {
-    cin >> n;
-    memset(DP, 0, sizeof(DP));
-    DP[0] = 1;
-    cout << compute(n) << endl;
+    return 0;
 }

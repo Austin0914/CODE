@@ -14,30 +14,18 @@ int main(){
     io
     int m,n;
     cin>>m>>n;
-    vector<set<int>>arr;
-    for(int i=0;i<n;i++){
-        string s;
-        cin>>s;
-        set<int>ss;
-        for(int j=0;j<s.length();j++){
-            ss.insert((int)s[j]-65);
-        }
-        arr.pb(ss);
-    }
+    int t=(1<<m)-1;
     int ans=0;
+
+    map<int,int>mp;
     for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            multiset<int>sum;
-            for(int it:arr[i]){
-                sum.insert(it);
-            }
-            for(int it:arr[j]){
-                sum.insert(it);
-            }
-            if(sum.size()==m){
-                ans++;
-            }
+        string s;cin>>s;
+        int sum=0;
+        for(int j=0;j<s.size();j++){
+            sum|=(1<<(s[j]-'A'));
         }
+        ans+=mp[sum^t];
+        mp[sum]++;
     }
     cout<<ans;
 }
